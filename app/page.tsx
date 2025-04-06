@@ -16,7 +16,7 @@ export default function Home() {
       </button>
       </Link>
       <Meteors className="absolute inset-0 z-0" number={20} minDelay={0.2} maxDelay={1.2} minDuration={2} maxDuration={10} angle={215} />
-      <p className="italic text-gray-500">"Trees carry their legacy through books." <br/> Maybe try carrying yours through words.</p>
+      <p className="italic text-gray-500">&quot;Trees carry their legacy through books.&quot;  <br/> Maybe try carrying yours through words.</p>
    </div>
   );
 }
