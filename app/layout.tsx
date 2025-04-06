@@ -2,6 +2,17 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
+import { Particles } from "./components/magicui/particles";
+
+import {
+  ClerkProvider,
+  SignInButton,
+  SignUpButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from '@clerk/nextjs'
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -23,12 +34,35 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+
+    <ClerkProvider>
+      <html lang="en">
+        <body
+          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        >
+          <header className="bg-black text-white flex justify-end items-center p-4 gap-4 h-16 ">
+            <SignedOut>
+              <SignInButton />
+              <SignUpButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+          </header>
+          <div className="bg-black h-screen w-screen">
+          <Particles
+          className="absolute inset-0 z-0"
+          quantity={200}
+          ease={80}
+          color="#ffffff"
+          refresh
+        />
         {children}
-      </body>
+        </div>
+      
+        </body>
+   
     </html>
+    </ClerkProvider>
   );
 }
