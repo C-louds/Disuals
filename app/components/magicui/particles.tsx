@@ -1,6 +1,6 @@
 "use client";
 /* eslint-disable */
-import { cn } from "@/lib/utils";
+import { cn } from "@/app/lib/utils";
 import React, {
   ComponentPropsWithoutRef,
   useEffect,

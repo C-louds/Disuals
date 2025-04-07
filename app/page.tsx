@@ -4,7 +4,7 @@ import "@/app/components/styles/styles.css";
 
 export default function Home() {  
   return (
-   <div className="h-screen w-screen flex flex-col gap-2 items-center justify-center relative overflow-hidden">
+   <div className="h-full w-full flex flex-col gap-2 items-center justify-center overflow-hidden">
     
       
       <h1 className="text-4xl md:text-6xl font-bold text-white drop-shadow-[0_0_45px_rgba(30,0,140,0.5)] floating-text">Welcome,</h1>
