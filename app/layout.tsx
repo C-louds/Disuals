@@ -48,12 +48,14 @@ export default function RootLayout({
               </SignedIn>
             </div>
           </header>
-          <div className="bg-black min-h-[calc(100vh-4rem)] w-full">
+          <div className="bg-black h-[calc(100vh-4rem)] w-screen">
             <Particles
               className="absolute inset-0 z-0"
               quantity={200}
               ease={80}
               color="#ffffff"
+              vx={0.3}
+              vy={0.3}
               refresh
             />
             {children}

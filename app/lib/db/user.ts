@@ -1,5 +1,6 @@
 import { neon } from '@neondatabase/serverless';
 
+
 export async function createUser({
   user_id,
   username,
@@ -44,3 +45,5 @@ export async function fetchUserById({ userId }: { userId: string }) {
 
   }
 }
+
+
