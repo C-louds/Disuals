@@ -5,14 +5,14 @@ import { useAuth } from "@clerk/nextjs";
 //import { NextResponse } from 'next/server';
 
 export function Book() {
-    const userId = useAuth();
+    const { userId, isLoaded } = useAuth();
     //console.log(userId);
     const [books, setBooks] = useState<any[]>([]);
        
     
     useEffect(() => {
           async function fetchBooks() {
-              if (!userId) return;
+              if (!isLoaded || !userId) return;
               
               try {
                
@@ -32,7 +32,7 @@ export function Book() {
             }
         
         fetchBooks();}
-        , [userId]);
+        , [userId, isLoaded]);
     
     return (
         <div>
