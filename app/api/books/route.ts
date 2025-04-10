@@ -1,7 +1,7 @@
 import { auth } from '@clerk/nextjs/server';
 import { neon } from '@neondatabase/serverless';
 
-export async function GET(request: Request) {
+export async function GET() {
   const { userId } = await auth();
   
   // If no userId, user is not authenticated

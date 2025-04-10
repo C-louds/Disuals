@@ -4,10 +4,19 @@ import { useEffect, useState } from "react";
 import { useAuth } from "@clerk/nextjs";
 //import { NextResponse } from 'next/server';
 
+type Book = {
+  book_id: string;
+  user_id: string;
+  title: string;
+  description: string;
+  createdAt: string;
+  updatedAt: string;
+}
+
 export function Book() {
     const { userId, isLoaded } = useAuth();
     //console.log(userId);
-    const [books, setBooks] = useState<any[]>([]);
+    const [books, setBooks] = useState<Book[]>([]);
        
     
     useEffect(() => {

@@ -1,4 +1,4 @@
-/* eslint-disable */
+
 import { neon } from '@neondatabase/serverless';
 import { hash } from 'bcryptjs';
 import { randomUUID } from 'crypto';
